@@ -1,0 +1,170 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+img {
+    vertical-align: top;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-color: #184260;
+    --bg-main-color: #e0f2fc;
+}
+
+html,
+.page {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+
+    color: var(--main-color);
+    background-color: var(--bg-main-color);
+}
+
+.page._lock {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1240px;
+    /* 1200px + 20px + 20px */
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.btn {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {}
+
+.btn:active {}
+
+.link {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.link:hover,
+.link:focus,
+.link:active {
+    opacity: .75;
+}
+
+/*  -------------------------  Header styles start -------------------------------  */
+
+.header,
+.footer {
+    background-color: rgb(238, 251, 154);
+}
+
+.header__content {
+    padding: 30px 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 40px;
+    line-height: 100%;
+
+    color: rgb(64, 148, 252);
+}
+
+/*  -------------------------  Header styles end -------------------------------  */
+
+/*  -------------------------  Main styles start -------------------------------  */
+
+.main__content {
+    padding: 30px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 10px; 
+}
+
+.item__text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.item__text:hover {
+    opacity: 0.8;
+}
+
+/*  -------------------------  Main styles end -------------------------------  */
+
+/*  -------------------------  Footer styles start -------------------------------  */
+
+.footer__content {
+    padding: 30px 0px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+
+    font-size: 16px;
+
+    color: rgb(64, 148, 252);
+}
+
+.my-github__img {
+    
+}
+
+/*  -------------------------  Footer styles end -------------------------------  */
