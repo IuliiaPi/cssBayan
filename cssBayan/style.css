@@ -28,10 +28,6 @@ h6 {
     font-size: inherit;
 }
 
-img {
-    vertical-align: top;
-}
-
 html {
     scroll-behavior: smooth;
 }
@@ -62,23 +58,10 @@ html,
     background-color: var(--bg-main-color);
 }
 
-.page._lock {
-    overflow: hidden;
-}
-
 .container {
     padding: 0 1.2rem;
     margin: 0 auto;
 }
-
-.btn {
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {}
-
-.btn:active {}
 
 .link {
     cursor: pointer;
@@ -99,13 +82,13 @@ html,
 }
 
 .header__content {
-    padding: 1.5rem 0;
+    padding: 1.1rem 0;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-size: 2rem;
+    font-size: 1.8rem;
     line-height: 100%;
 
     color: rgb(64, 148, 252);
@@ -115,6 +98,10 @@ html,
 
 /*  -------------------------  Main styles start -------------------------------  */
 
+.main {
+    flex: 1 0 auto;
+}
+
 .main__content {
     padding: 1.5rem 0;
 
@@ -122,84 +109,81 @@ html,
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.2rem;
+}
+
+.items {
+    width: 23.7rem;
 }
 
 .item {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    gap: 0.7rem;
+    margin-bottom: 0.5rem;
 }
 
-.item__text {
+.item__label {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.item__text:hover {
-    opacity: 0.7;
+.item__label:hover {
+    opacity: 0.6;
 }
 
-.item__img {
-    /* display: none; */
-}
-
-.item__title:hover .item__img {
-    display: block;
-}
-
-.close {
-    transition: all 0.3s ease;
-    /* position: absolute; */
-    /* right: 32px; */
-    /* top: 32px; */
-    /* width: 32px; */
-    /* height: 32px; */
-    opacity: 0;
-    /* background-color: #333; */
-}
-
-.page:hover.close {
-    opacity: 1;
-}
-
-/* .close:before,  */
-.close:after {
-    /* position: absolute; */
-    /* left: 15px; */
-    content: '+';
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--main-color);
-    /* height: 33px; */
-    /* width: 2px; */
-    /* background-color: #333; */
-}
-
-.item__text:hover .close:hover {
+.item__label+.item__input:checked+.item__icon {
     transform: rotate(45deg);
 }
 
-.close:before {
-    /* transform: rotate(45deg); */
+.item__icon {
+    font-size: 1.5rem;
+    /* opacity: 0; */
+    transform: rotate(0deg);
+    transition: all 0.6s ease;
 }
 
-.close:after {
-    /* transform: rotate(-45deg); */
+.item__icon:hover {
+    transform: rotate(45deg);
+}
+
+.item__label+.item__input {
+    display: none;
+}
+
+.item__img {
+    padding: 0.5rem 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.item__label+.item__input:checked+.item__img {
+    max-height: 20rem;
+}
+
+.item__label:hover+.item__img {
+    /* max-height: 20rem; */
+}
+
+.page+.items.item.item__label.item__icon {
+    /* opacity: 0; */
+}
+
+.page:hover+.items.item.item__label.item__icon {
+    /* opacity: 1; */
 }
 
 /*  -------------------------  Main styles end -------------------------------  */
 
 /*  -------------------------  Footer styles start -------------------------------  */
 
+.footer {
+    flex: 0 0 auto;
+}
+
 .footer__content {
-    padding: 1.5rem 0;
+    padding: 1rem 0;
 
     display: flex;
     justify-content: space-between;
@@ -209,8 +193,6 @@ html,
 
     color: rgb(64, 148, 252);
 }
-
-.my-github__img {}
 
 /*  -------------------------  Footer styles end -------------------------------  */
 
@@ -233,12 +215,20 @@ html,
     }
 
     .header__content {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+    }
+
+    .items {
+        width: 14rem;
     }
 
     .item__img {
         width: 14rem;
         height: 9rem;
+    }
+
+    .item__icon {
+        font-size: 1.2rem;
     }
 
 }
