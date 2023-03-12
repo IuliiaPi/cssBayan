@@ -54,8 +54,9 @@ html,
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 130%;
+    font-size: 1.2rem;
+    line-height: 100%;
+    letter-spacing: 0.06em;
 
     color: var(--main-color);
     background-color: var(--bg-main-color);
@@ -66,9 +67,7 @@ html,
 }
 
 .container {
-    max-width: 1240px;
-    /* 1200px + 20px + 20px */
-    padding: 0 20px;
+    padding: 0 1.2rem;
     margin: 0 auto;
 }
 
@@ -100,13 +99,13 @@ html,
 }
 
 .header__content {
-    padding: 30px 0px;
+    padding: 1.5rem 0;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-size: 40px;
+    font-size: 2rem;
     line-height: 100%;
 
     color: rgb(64, 148, 252);
@@ -117,13 +116,13 @@ html,
 /*  -------------------------  Main styles start -------------------------------  */
 
 .main__content {
-    padding: 30px 0px;
+    padding: 1.5rem 0;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 1.2rem;
 }
 
 .item {
@@ -131,7 +130,7 @@ html,
     flex-direction: column;
     /* justify-content: center; */
     /* align-items: center; */
-    gap: 10px; 
+    gap: 0.7rem; 
 }
 
 .item__text {
@@ -144,21 +143,68 @@ html,
 }
 
 .item__text:hover {
-    opacity: 0.8;
+    opacity: 0.7;
 }
+
+.item__img {
+    /* display: none; */
+    }
+
+.item__title:hover .item__img {
+display: block;
+}
+
+.close {
+    transition: all 0.3s ease;
+    /* position: absolute; */
+    /* right: 32px; */
+    /* top: 32px; */
+    /* width: 32px; */
+    /* height: 32px; */
+    opacity: 0;
+    /* background-color: #333; */
+}
+
+.page:hover.close {
+    opacity: 1;
+}
+
+/* .close:before,  */
+.close:after {
+  /* position: absolute; */
+  /* left: 15px; */
+  content: '+';
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--main-color);
+  /* height: 33px; */
+  /* width: 2px; */
+  /* background-color: #333; */
+}
+
+.item__text:hover .close:hover {
+    transform: rotate(45deg);
+  }
+
+.close:before {
+    /* transform: rotate(45deg); */
+  }
+  .close:after {
+    /* transform: rotate(-45deg); */
+  }
 
 /*  -------------------------  Main styles end -------------------------------  */
 
 /*  -------------------------  Footer styles start -------------------------------  */
 
 .footer__content {
-    padding: 30px 0px;
+    padding: 1.5rem 0;
 
     display: flex;
     justify-content: space-between;
     align-items: center; 
 
-    font-size: 16px;
+    font-size: 0.8rem;
 
     color: rgb(64, 148, 252);
 }
