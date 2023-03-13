@@ -113,6 +113,8 @@ html,
 
 .items {
     width: 23.7rem;
+
+    cursor: pointer;
 }
 
 .item {
@@ -132,6 +134,10 @@ html,
     opacity: 0.6;
 }
 
+.item__label:hover>.item__icon {
+    transform: rotate(45deg);
+}
+
 .item__icon {
     font-size: 1.5rem;
     /* opacity: 0; */
@@ -139,8 +145,8 @@ html,
     transition: all 0.6s ease;
 }
 
-.item__icon:hover {
-    transform: rotate(45deg);
+.main__content:hover+.items+.item+.item__label>.item__icon {
+    /* opacity: 1; */
 }
 
 .item__input {
@@ -151,32 +157,46 @@ html,
     padding: 0.5rem 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s;
+    transition: max-height 0.8s ease;
 }
 
-.item__input:checked+.item__img {
+.item__input:checked~.item__img {
     max-height: 20rem;
 }
 
-.item__input:checked+.item__icon {
-    transform: rotate(45deg);
+.item__label:hover~.item__img {
+    max-height: 20rem;
+}
+
+.item__input:checked+.item__label {
     opacity: 0.7;
 }
 
-.item__icon:hover>.item__img {
-    /* max-height: 20rem; */
-}
-
-.item__icon:active+.item__icon {
-    /* transform: rotate(45deg); */
+.item__input:checked+.item__label>.item__icon {
+    transform: rotate(45deg);
+    opacity: 0.7;
 }
 
 .page+.items.item.item__label.item__icon {
     /* opacity: 0; */
 }
 
-.page:hover+.items.item.item__label.item__icon {
-    /* opacity: 1; */
+.page:hover>.main.items+.item+.item__label+.item__icon {
+    /* opacity: 0; */
+}
+
+.page~.item__icon {
+    /* opacity: 0; */
+}
+
+.item__label:active {
+    cursor: all-scroll;
+}
+
+.item:active>.item__img {
+    filter: blur(0.06rem);  
+    transition: all 0.6s ease; 
+    cursor: all-scroll;
 }
 
 /*  -------------------------  Main styles end -------------------------------  */
